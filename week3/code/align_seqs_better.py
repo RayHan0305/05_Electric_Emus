@@ -30,8 +30,8 @@ def main(argv):
     # Handle inputs
     if len(argv) != 3:
         print("No input FASTA files specified, using defaults from ../data/")
-        seq1_file = "../data/seq1.fasta"
-        seq2_file = "../data/seq2.fasta"
+        seq1_file = "../data/407228326.fasta"
+        seq2_file = "../data/407229412.fasta"
     else:
         seq1_file = argv[1]
         seq2_file = argv[2]
