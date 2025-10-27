@@ -1,4 +1,5 @@
 """
+Hi
 Usage:
     python3 align_seqs_fasta ../data/<filename> ../data/<filename>
 """
