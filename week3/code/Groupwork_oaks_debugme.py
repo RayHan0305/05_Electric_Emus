@@ -4,6 +4,8 @@
 Description: This script filters species names in a CSV file, identifying those 
 belonging to the Quercus genus (oak trees), and writes them to a new CSV file. 
 It reads from an input file, processes the data, and saves the results to an output file.
+1. Skip the header row so that "Genus, species" isn't traeated as data.
+2. INclude the header in the output file.
 Additionally, it includes a function with built-in tests using doctest.
 
 Author: 'Zhiquan Kang'
@@ -26,7 +28,8 @@ try:
     os.makedirs(results_dir, exist_ok=True)
 except OSError as e:
     print(f"Error creating directory '{results_dir}': {e}")
-    exit(1)  # Exit with an error code if directory creation fails
+    # Exit with an error code if directory creation fails
+    exit(1) 
 
 
 def is_an_oak(name):
@@ -45,8 +48,8 @@ def is_an_oak(name):
     """
     return name.split()[0] in ('quercus', 'Quercus') 
 
-#print(str(is_an_oak('Quercuss sylvatica')) + " test complete" + '\n')
-#gives false
+# print(str(is_an_oak('Quercuss sylvatica')) + " test complete" + '\n')
+# gives false
 
     
 def main(argv): 
