@@ -1,24 +1,35 @@
 """
 Usage:
-    python3 align_seqs_better.py ../data/<filename> ../data/<filename>
+    python3 align_seqs_better.py ../data/<filename1> ../data/<filename2>
 
 Description:
-    This script aligns two FASTA sequences and keeps *all* alignments
-    with the highest score. Results are written to ../results/best_alignments.txt
+    This script aligns two DNA sequences from FASTA files.
+    It compares all possible alignments and finds all equally-best alignments
+    (not just the first one). 
+    The results are saved to the ../results/ directory, using the pickle module.
+    
+Author: 'Ruixuan Han'
+Version: 0.0.1
+License: License for this code/program
+
+__appname__ = 'align_seqs_better'
+__author__ = 'Ruixuan Han'
+__version__ = '0.0.1'
 """
 
 import sys
 import os
+import pickle
 
+# Read a FASTA file and return the sequence as a string
 def read_fasta(filename):
-    """Read a FASTA file and return the sequence."""
     with open(filename, 'r') as f:
         lines = f.readlines()
         seq = "".join([line.strip() for line in lines if not line.startswith(">")])
     return seq
 
+# Calculate alignment score between s1 and s2 starting at startpoint.
 def calculate_score(s1, s2, l1, l2, startpoint):
-    """Calculate alignment score for a given startpoint."""
     score = 0
     for i in range(l2):
         if (i + startpoint) < l1:
@@ -27,20 +38,16 @@ def calculate_score(s1, s2, l1, l2, startpoint):
     return score
 
 def main(argv):
-    # Handle inputs
     if len(argv) != 3:
-        print("No input FASTA files specified, using defaults from ../data/")
-        seq1_file = "../data/407228326.fasta"
-        seq2_file = "../data/407229412.fasta"
-    else:
-        seq1_file = argv[1]
-        seq2_file = argv[2]
+        sys.exit(0)
+        
+    seq1_file = argv[1]
+    seq2_file = argv[2]
 
-    # Read sequences
+    # Read FASTA sequences
     seq1 = read_fasta(seq1_file)
     seq2 = read_fasta(seq2_file)
 
-    # Assign longer and shorter
     l1, l2 = len(seq1), len(seq2)
     if l1 >= l2:
         s1, s2 = seq1, seq2
@@ -48,39 +55,33 @@ def main(argv):
         s1, s2 = seq2, seq1
         l1, l2 = l2, l1
 
-    # Alignment search
+    # Alignment comparison
+    my_best_align = []
     my_best_score = -1
-    best_alignments = []
 
     for i in range(l1):
         z = calculate_score(s1, s2, l1, l2, i)
-        align = "." * i + s2
-
         if z > my_best_score:
+            my_best_align = ["." * i + s2]   
             my_best_score = z
-            best_alignments = [(align, z)]
-        elif z == my_best_score:
-            best_alignments.append((align, z))
+            
+    print("Best score:", my_best_score)
+    print("Number of equally-best alignments:", len(my_best_align))
 
-    # Output summary
-    print(f"\nFound {len(best_alignments)} best alignment(s) with score {my_best_score}.\n")
-    for align, score in best_alignments:
-        print(f"Alignment (score={score}): {align}")
-
-    # Save to plain text file
+    # Save results
     results_dir = "../results"
-    if not os.path.exists(results_dir):
-        os.makedirs(results_dir)
+    os.makedirs(results_dir, exist_ok=True)
+    output_file = os.path.join(results_dir, "best_alignments.pickle")
 
-    output_file = os.path.join(results_dir, "best_alignments.txt")
-    with open(output_file, "w") as f:
-        f.write(f"Best score: {my_best_score}\n")
-        f.write(f"Number of best alignments: {len(best_alignments)}\n\n")
-        for align, score in best_alignments:
-            f.write(f"Alignment (score={score}): {align}\n")
+    with open(output_file, "wb") as f:
+        pickle.dump({
+            "best_score": my_best_score,
+            "alignments": my_best_align,
+            "seq1": s1,
+            "seq2": s2
+        }, f)
 
-    print(f"\nResults saved to {output_file}\n")
-
+    print(f"Results saved to: {output_file}")
     return 0
 
 if __name__ == "__main__":

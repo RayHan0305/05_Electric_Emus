@@ -1,20 +1,32 @@
 """
-Hi
 Usage:
-    python3 align_seqs_fasta ../data/<filename> ../data/<filename>
+    python3 align_seqs_fasta.py ../data/<filename> ../data/<filename>
+    
+Description: 
+    This script calculate the match score between two seqs from to seqerate fasta files. 
+    Print and save the best score and the last best alignment of it
+
+Author: 'Ximan Ding'
+Version: 0.0.1
+License: License for this code/program
+
+__appname__ = 'align_seqs_fasta'
+__author__ = 'XimanDing'
+__version__ = '0.0.1'
+
 """
 
 import sys
 
+# Read a FASTA file and return the sequence as a string
 def read_fasta(filename):
-    # Read fasta file
     with open(filename, 'r') as f:
         lines = f.readlines()
         seq = "".join([line.strip() for line in lines if not line.startswith(">")])
     return seq
 
+# Calculate alignment score
 def calculate_score(s1, s2, l1, l2, startpoint):
-    # Calculate the score
     score = 0
     for i in range(l2):
         if (i + startpoint) < l1:
@@ -29,11 +41,10 @@ def main(argv):
     seq1_file = argv[1]
     seq2_file = argv[2]
 
-    # Read the seq
+    #  Read FASTA sequences
     seq1 = read_fasta(seq1_file)
     seq2 = read_fasta(seq2_file)
 
-    # Compare
     l1, l2 = len(seq1), len(seq2)
     if l1 >= l2:
         s1, s2 = seq1, seq2
@@ -41,7 +52,7 @@ def main(argv):
         s1, s2 = seq2, seq1
         l1, l2 = l2, l1
 
-    # Compare the calculation
+    # Alignment comparision
     my_best_align = None
     my_best_score = -1
 
