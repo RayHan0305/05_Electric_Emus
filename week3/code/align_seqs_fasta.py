@@ -24,19 +24,19 @@ def calculate_score(s1, s2, l1, l2, startpoint):
 def main(argv):
     if len(argv) == 1:
      # Read the seq
-    seq1 = read_fasta(seq1_file)
-    seq2 = read_fasta(seq2_file)
-    print(f"No files provided, using default lines: {seq1} and {seq2}")
+        seq1 = read_fasta("../data/407228326.fasta")
+        seq2 = read_fasta("../data/407228412.fasta")
+        print("No files provided, using default lines: 407228326.fasta and 407228412.fasta")
 
     elif len(argv) != 3:
-    seq1 = argv[1]
-    seq2 = argv[2]
-    print("Input found! Aligning: {seq1} and {seq2}")
+        seq1 = argv[1]
+        seq2 = argv[2]
+        print("Input found! Aligning: {seq1} and {seq2}")
 
-    else
-    print("Error: too few/many arguments or file error!")
-    ("\nInput 3 arguments: align_sequ_fasta.py and two fasta files: <seq1_file> <seq2_file>")
-    print("\n OR  ")
+    else:
+        print ("Error: too few/many arguments or file error!")
+        ("\nInput 3 arguments: align_seq_fasta.py and two fasta files: <seq1_file> <seq2_file>")
+        print("\n OR Input ONLY: align_seq_fasta.py to use the default files.")
     sys.exit(0)
 
     # Compare
