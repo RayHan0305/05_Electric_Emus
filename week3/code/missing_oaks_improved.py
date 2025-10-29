@@ -72,5 +72,3 @@ def main(argv):
 
 if (__name__ == "__main__"):
     status = main(sys.argv)
-    import doctest
-    doctest.testmod()
