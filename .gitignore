@@ -1,0 +1,6 @@
+# Ignore R and project files
+.Rhistory
+
+# Ignore custom history and list files
+*.list.txt
+*.historyR
