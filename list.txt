@@ -1,0 +1,10 @@
+.
+├── list.txt
+├── README.md
+└── week3
+    ├── code
+    ├── data
+    ├── results
+    └── sandbox
+
+6 directories, 2 files
