@@ -1,10 +1,20 @@
 
 #!/usr/bin/env python3
 
-"""A script which takes a .csv input file with two DNA sequences and outputs a .txt file containting the best alignment of the two
-sequences. Additionally a score showing the number of alignment matches made. This code takes a .csv input file called 
-align_seqs_test.csv from "../data/file_name". Finally this code also imports softwares for use within the script. 
-It imports: sys and csv"""
+"""
+align_seqs_fasta.py: Simple Pairwise Sequence Alignment
+
+This script performs an ungapped alignment search between two biological
+sequences provided in FASTA files. It determines the optimal alignment
+by sliding the shorter sequence across the entire length of the longer
+sequence and calculating the position with the highest number of direct matches.
+This script finds ALL optimal alignments within two sequences.
+To use hard-coded default files:
+    python3 align_seqs_fasta.py """
+
+__appname__ = 'Align DNA squences and find best match'
+__author__ = 'Natasha Lawson-Hale (tll25@ac.ic.uk)'
+__version__ = '0.0.1'
 
 __appname__ = 'Align DNA squences and find best match'
 __author__ = 'Natasha Lawson-Hale (tll25@ac.ic.uk)'
