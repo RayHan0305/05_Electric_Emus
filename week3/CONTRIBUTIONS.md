@@ -64,6 +64,8 @@
 - [Describe other contributions]
 
 **Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
+
+
 ---
 
 ## Collaboration Process
