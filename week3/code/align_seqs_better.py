@@ -44,24 +44,22 @@ def calculate_score(s1, s2, l1, l2, startpoint):
                 score = score + 1
             else:
                 matched = matched + "-"
-    print("The matched sequence result:", matched)
     return score, matched
 
-
+def read_fasta(filename):
+    # Read fasta file
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+        seq = "".join([line.strip() for line in lines if not line.startswith(">")])
+    return seq
 def main(): 
-    """Checks for .csv input file, displays sequences if found, displays error if not found"""
-    input_path = script_dir.parent / 'data' / 'align_seqs_test.csv'
+    seq1, seq2 = "", ""
     try:
-        with open(input_path, 'r') as f:
-            reader = csv.DictReader(f)
-            for column in reader:
-                if column ['Sequence_number'] == 'seq1':
-                    seq1 = column[" Data"].strip()
-                elif column ['Sequence_number'] == 'seq2':
-                    seq2 = column[" Data"].strip()
-        print(f"DNA sequences loaded: Sequence 1: {seq1}, Sequence 2: {seq2}")
+        seq1 = read_fasta("../data/407228326.fasta")
+        seq2 = read_fasta("../data/407228412.fasta")
+        print(f"DNA sequences loaded!")
     except FileNotFoundError:
-        print(f"Error: File not found at {input_path}")
+        print(f"Error: File not found!")
         return 1  # exit with error
 
     ##Assign the longer sequence to s1, and the shorter to s2. 
@@ -81,33 +79,44 @@ def main():
     my_best_aligns = []
     my_best_score = -1
     for i in range(l1):
-        z = calculate_score(s1, s2, l1, l2, i)
-        if z >= my_best_score:
-            my_best_aligns = 
+        z, matched = calculate_score(s1, s2, l1, l2, i)
+        
+        if z > my_best_score:
+            # Found a new, STRICTLY HIGHER best score:
+            my_best_aligns = [] # Reset the list, discarding old, lower-scoring alignments
             my_best_aligns.append({
-                "position" : i
-                "matched" : matched
+                "position" : i,
+                "matched" : matched,
                 "aligned_seq" : "." * i + s2
             })
             my_best_score = z
-        elif z == my_best_score and z > -1:
+            
+        elif z == my_best_score:
+            # Found a score EQUAL to the current best:
             my_best_aligns.append({
-                "position" : i
-                "matched" : matched
+                "position" : i,
+                "matched" : matched,
                 "aligned_seq" : "." * i + s2
             })
     print("\nAlignment results:")
-        print(f"Best score: {my_best_score} matches")
-        print(f"Total optimal shifts found: {len(all_best_aligns)}")
-        print(f"First Best Alignment at Shift Position: {best_align_data['shift_pos']}")
+    print(f"Best score: {my_best_score} matches")
+    print(f"Total best shifts found: {len(my_best_aligns)}")
 
-    #Saves alignment and creates .txt file
-    output_path = script_dir.parent / 'results' / 'align_sequs_results.txt'
-    with open (output_path, 'w') as f:
-        f.write(f"Best alignment:\n{my_best_align}\n")
-        f.write(f"Best score: {my_best_score}\n")
-    print(f"Results saved to {output_path}")
 
+    output_dir = script_dir.parent / 'results'
+
+    results_data = {
+            "Sequence 1": s1,
+            "Sequence 2": s2,
+            "Best_alignment_score": my_best_score,
+            "All_best_alignments": my_best_aligns # The list of all best shifts
+        }
+    try:
+        with open (output_dir, 'wb') as f:
+            pickle.dump(results_data, f)
+            print(f"Detailed results saved to PICKLE file: {output_dir}")
+    except Exception as e:
+        print(f"Error saving pickle file: {e}")
     return 0
 
 if __name__ == "__main__":
