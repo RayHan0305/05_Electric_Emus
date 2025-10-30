@@ -52,7 +52,7 @@ def main(argv):
     outputs into a .csv file with headings."""
     #Opens input and output files
     f = open('../data/TestOaksData.csv','r')
-    g = open('../data/JustOaksData.csv','w')
+    g = open('../results/JustOaksData.csv','w')
     #Assigns variables
     taxa = csv.reader(f) 
     csvwrite = csv.writer(g)

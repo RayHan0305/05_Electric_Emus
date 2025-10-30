@@ -1,7 +1,7 @@
 # Natasha Lawson-Hale's Branch for Electric Emus Groupwork
-=========================================================
-
-## README.md Contents
+=================================================================================
+=
+### README.md Contents
 --------------------
 * [Description](#description)
 * [Code files](#code-files)
