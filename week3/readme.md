@@ -1,4 +1,4 @@
-#Natasha Lawson-Hale's Branch for Electric Emus Groupwork
+# Natasha Lawson-Hale's Branch for Electric Emus Groupwork
 =========================================================
 
 ## README.md Contents
@@ -7,12 +7,13 @@
 * [Code files](#code-files)
 * [Languages](#languages)
 * [Structure](#structure)
+* [Author and contact](#author-and-contact)
 
-##Description  
+## Description  
 --------------------
 This banch contains Tasha's edits for the Groupwork code for the CMEE bootcamp.
 
-##Code files:   
+## Code files:   
 -------------------------
 * missing_oaks_improved.py
 	- This script processes a CSV file to extract and save only the species belonging to the Quercus genus (oak trees) into a new CSV file.
@@ -24,14 +25,14 @@ This banch contains Tasha's edits for the Groupwork code for the CMEE bootcamp.
 	- This Python script performs a simple sequence alignment between two biological sequences from input FASTA files. Finding **all** best alignment matches.
 	> This script has two arguments inputted from the 'data' directory: 407228412.fasta and 407228326.fasta
 
-##Languages
+## Languages
 --------------------
 > Python
 
-##Structure  
+## Structure  
 --------------------
 ```
-#.Tasha's branch 
+.Tasha's branch 
 ├── README.md  
 └── week3  
     ├── code 
@@ -39,7 +40,7 @@ This banch contains Tasha's edits for the Groupwork code for the CMEE bootcamp.
     ├── results*  
     └── sandbox*  
 ```
-#Author and contact
+# Author and contact
 -----------------------    
-Natasha Lawson-Hale
-email: tll25@ic.ac.uk
+Natasha Lawson-Hale  
+E-mail: tll25@ic.ac.uk
