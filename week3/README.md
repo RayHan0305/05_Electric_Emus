@@ -1,4 +1,4 @@
-# **CMEEGourseWork - Week3 - Python**
+# **CMEEGroupWork - Week3 - Python**
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ It contains directories called `code`, `data`, `results`
 ```Group practices scripts```
 | Script Name |Description | Arguments |
 | ------ | ------ | ------ |
-| align_seqs_fasta.py    | C This script calculate the match score between two seqs from to seqerate fasta files. | 1 -> A fasta file (default:407228412.fasta), 2 -> A fasta file (default:407228326.fasta)|
+| align_seqs_fasta_ding.py    | This script calculate the match score between two seqs from to seqerate fasta files. | 1 -> A fasta file (default:407228412.fasta), 2 -> A fasta file (default:407228326.fasta)|
 | align_seqs_better.py   | Calculate the match score between two seqs. Print and save all the possible alignment with the highest match score of it. | 1 -> A fasta file (default:407228412.fasta), 2 -> A fasta file (default:407228326.fasta)|
 | Groupwork_oaks_debugme.py    | This script filters species names in a CSV file, identifying those belonging to the Quercus genus (oak trees), and writes them to a new CSV file. | None |
 
