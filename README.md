@@ -1,4 +1,6 @@
-# The CMEE Groupwork Repository of Electric_Emus 1
+# The CMEE Groupwork Repository of Electric_Emus
+
+**Welcome to our Repository !!!**
 
 This is the current project structure:  
 ```
@@ -12,4 +14,4 @@ This is the current project structure:
     └── sandbox
     
 ```
-new branch
+

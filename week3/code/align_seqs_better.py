@@ -64,6 +64,8 @@ def main(argv):
         if z > my_best_score:
             my_best_align = ["." * i + s2]   
             my_best_score = z
+        elif z == my_best_score:
+            my_best_align.append("." * i + s2)
             
     print("Best score:", my_best_score)
     print("Number of equally-best alignments:", len(my_best_align))
