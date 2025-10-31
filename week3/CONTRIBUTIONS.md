@@ -43,16 +43,20 @@
 
 **Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
 
+---
+
 ### [Ximan Ding]
 **Role(s)**: [e.g., Integration specialist, Error handling, Code optimization]
 
 **Specific Contributions**:
-- [Describe specific code/functions written]
-- [Describe documentation contributions]
-- [Describe testing/debugging work]
-- [Describe other contributions]
+- Write the align_seqs_fasta.py scripts (DNA2 practical)
+- Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks.
+- Conducted multiple test runs with different FASTA files inputs to verify alignments accuracy.
+- Designed a clear output format for alignment result and ensured consistent file structure.
 
-**Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
+**Key commits**: Create and implemented core logic for DNA1 practical. Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. Coordinated testing and documentation sonsistency across week3 scripts.
+
+---
 
 ### [Ruixuan Han]
 **Role(s)**: [e.g., Integration specialist, Error handling, Code optimization]
@@ -64,6 +68,7 @@
 - [Describe other contributions]
 
 **Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
+
 ---
 
 ## Collaboration Process
