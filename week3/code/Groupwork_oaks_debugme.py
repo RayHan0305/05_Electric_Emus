@@ -8,7 +8,7 @@ It reads from an input file, processes the data, and saves the results to an out
 2. INclude the header in the output file.
 Additionally, it includes a function with built-in tests using doctest.
 
-Author: 'Zhiquan Kang, Paruit Lisa'
+Author: 'Zhiquan Kang, Lawson-Hale Tasha L, Lisa Paruit'
 Version: 0.0.1
 License: License for this code/program
 """
