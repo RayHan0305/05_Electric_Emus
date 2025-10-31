@@ -54,7 +54,8 @@
 - Conducted multiple test runs with different FASTA files inputs to verify alignments accuracy.
 - Designed a clear output format for alignment result and ensured consistent file structure.
 
-**Key commits**: Create and implemented core logic for DNA1 practical. Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. Coordinated testing and documentation sonsistency across week3 scripts.
+**Key commits**: 
+Create and implemented core logic for DNA1 practical. Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. Coordinated testing and documentation sonsistency across week3 scripts.
 
 ---
 
@@ -62,39 +63,47 @@
 **Role(s)**: [Code optimization, Documentation lead]
 
 **Specific Contributions**:
-- Writing the `align_seqs_better.py` practical.
-- Writing the README.md.
-- Help with the improvement of alignments DNA practicals.
+- Authored the `align_seqs_better.py` practical.
+- Created the main `README.md` and refined it to match submission standards.
+- Supported improvements and optimization in the DNA alignment practicals (`align_seqs_fasta/py`,`align_seqs_better.py`).
+- Coordinated documentation formatting and consistency checks across the repo.
 
-**Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
+**Key commits**: 
 - "Groupwork updated" in Oct 26: Finished writing the `align_seqs_better.py` and push it into the repo
-- "Groupwork updated" in Oct 28: Modification of `align_seqs_fasta.py` and align_seqs_better.py.
-
-
+- "Groupwork updated" in Oct 28: Modified both `align_seqs_fasta.py` and `align_seqs_better.py` for optimization.
 ---
 
 ## Collaboration Process
 
-**Meeting Schedule**: [There is no specific meeting schedule, we communicate at any time online when there is a problem.]
+**Meeting Schedule**:   
+No fixed schedule - team members communicated flexibly online via shared messaging channels whenever issues arose.
 
-**Work Distribution Strategy**: [Complete all the tasks separately, then compare and discuss the results, and finally optimize the code.]
+**Work Distribution Strategy**:   
+Each member independently developed assigned parts, then collaboratively reviewed, tested, and optimized the combined code.
 
-**Key Decisions**: [None (List major technical or design decisions made as a team)]
+**Key Decisions**:   
+- Developed two complementary scripts — `align_seqs_fasta.py` for straightforward pairwise alignment with clear output, and `align_seqs_better.py` for improved functionality that finds all equally best alignments and saves results automatically.
+- Agreed on a unified documentation format, including clear usage instructions, inline comments, and consistent naming conventions across scripts and the README file.
 
-**Challenges and Solutions**: [Describe any significant challenges faced and how they were resolved]
+**Challenges and Solutions**:  
+- Merge conflicts and path inconsistencies during integration.  
+[Solution: Centralized branch management and code review by Zhiquan Kang.]
+- Ensuring correct alignment scoring.  
+[Solution: Repeated tests and debugging coordinated by Lisa and Ximan Ding.]
 
 ## Code Review Summary
 
-[Describe the code review process used, e.g., pull request reviews, pair programming sessions]
+Peer review via Git branches and manual inspection before merging to main. Each member tested and reviewed at least one other member’s script for correctness and readability.
 
 **Pull Requests**:
-- PR #1: [Brief description] - Reviewed by: [names]
-- PR #2: [Brief description] - Reviewed by: [names]
-- [etc.]
+- PR #1: [Initial alignment and oak scripts] - Reviewed by: [all members]
+- PR #2: [README and documentation update] - Reviewed by: [Ximan Ding & Ruixuan Han]
+- PR #3: [Final integration and cleanup] - Reviewed by: [all members]
 
 ## Testing and Quality Assurance
-
-[Describe testing approaches used and who contributed to testing]
+- Each script tested independently using both default and custom FASTA inputs.
+- Debugging supported by `ipdb` and `doctest`.
+- Outputs cross-checked among members to ensure consistency and accuracy.
 
 ## Declaration
 
