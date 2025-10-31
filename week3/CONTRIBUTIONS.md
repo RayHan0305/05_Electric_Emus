@@ -110,8 +110,8 @@ Peer review via Git branches and manual inspection before merging to main. Each 
 We declare that the above contributions are accurate and that all team members participated actively in this group work.
 
 **Signatures** (or typed names with date):
-- [Team Member 1]: Paruit Lisa..........Date: _______
-- [Team Member 2]: Zhiquan Kang.........Date: _______
-- [Team Member 3]: Lawson-Hale Tasha L..Date: _______
-- [Team Member 4]: Ximan Ding...........Date: _______
-- [Team Member 5]: Ruixuan Han..........Date: _______
+- [Team Member 1]: Paruit Lisa - Date: _______
+- [Team Member 2]: Zhiquan Kang - Date: _______
+- [Team Member 3]: Lawson-Hale Tasha L - Date: _______
+- [Team Member 4]: Ximan Ding - Date: _______
+- [Team Member 5]: Ruixuan Han - Date: _______

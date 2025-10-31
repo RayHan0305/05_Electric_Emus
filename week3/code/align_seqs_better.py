@@ -8,7 +8,7 @@ Description:
     (not just the first one). 
     The results are saved to the ../results/ directory, using the pickle module.
     
-Author: 'Ruixuan Han'
+Author: 'Ruixuan Han, Lawson-Hale Tasha L'
 Version: 0.0.1
 License: License for this code/program
 
