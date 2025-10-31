@@ -5,13 +5,17 @@
 This is the current project structure:  
 ```
 .
-├── list.txt
-├── README.md
-└── week3
-    ├── code
-    ├── data
-    ├── results
-    └── sandbox
-    
+week3
+├── code
+│   ├── Groupwork_oaks_debugme.py
+│   ├── align_seqs_better.py
+│   ├── align_seqs_fasta.py
+│   └── test.py
+│
+└── data
+    ├── 407228326.fasta
+    ├── 407228412.fasta
+    ├── E.coli.fasta
+    └── TestOaksData.csv
 ```
 
