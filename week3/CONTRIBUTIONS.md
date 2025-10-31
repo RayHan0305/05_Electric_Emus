@@ -96,9 +96,9 @@ Each member independently developed assigned parts, then collaboratively reviewe
 Peer review via Git branches and manual inspection before merging to main. Each member tested and reviewed at least one other member’s script for correctness and readability.
 
 **Pull Requests**:
-- PR #1: [Initial alignment and oak scripts] - Reviewed by: [all members]
-- PR #2: [README and documentation update] - Reviewed by: [Ximan Ding & Ruixuan Han]
-- PR #3: [Final integration and cleanup] - Reviewed by: [all members]
+- PR #1: Initial alignment and oak scripts - Reviewed by: [all members]
+- PR #2: README and documentation update - Reviewed by: [Ximan Ding & Ruixuan Han]
+- PR #3: Final integration and cleanup - Reviewed by: [all members]
 
 ## Testing and Quality Assurance
 - Each script tested independently using both default and custom FASTA inputs.
@@ -110,8 +110,8 @@ Peer review via Git branches and manual inspection before merging to main. Each 
 We declare that the above contributions are accurate and that all team members participated actively in this group work.
 
 **Signatures** (or typed names with date):
-- [Team Member 1]: Paruit Lisa          Date: _______
-- [Team Member 2]: Zhiquan Kang         Date: _______
-- [Team Member 3]: Lawson-Hale Tasha L  Date: _______
-- [Team Member 4]: Ximan Ding           Date: _______
-- [Team Member 5]: Ruixuan Han          Date: _______
+- [Team Member 1]: Paruit Lisa..........Date: _______
+- [Team Member 2]: Zhiquan Kang.........Date: _______
+- [Team Member 3]: Lawson-Hale Tasha L..Date: _______
+- [Team Member 4]: Ximan Ding...........Date: _______
+- [Team Member 5]: Ruixuan Han..........Date: _______
