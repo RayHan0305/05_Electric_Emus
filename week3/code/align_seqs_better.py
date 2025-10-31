@@ -9,7 +9,7 @@ sequences provided in FASTA files. It determines the optimal alignment
 by sliding the shorter sequence across the entire length of the longer
 sequence and calculating the position with the highest number of direct matches.
 This script finds ALL optimal alignments within two sequences.
-To use hard-coded default files:
+Uses hard-coded default files:
     python3 align_seqs_fasta.py """
 
 __appname__ = 'Align DNA squences and find best match'
