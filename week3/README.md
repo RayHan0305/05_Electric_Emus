@@ -50,11 +50,7 @@ It contains directories called `code`, `data`, `results`
 ```Group practices scripts```
 | Script Name |Description | Arguments |
 | ------ | ------ | ------ |
-<<<<<<< HEAD
-| align_seqs_fasta.py    | This script calculate the match score between two seqs from to seqerate fasta files. | 1 -> A fasta file (default:407228412.fasta), 2 -> A fasta file (default:407228326.fasta)|
-| align_seqs_better.py   | Calculate the match score between two seqs. Print and save all the possible alignment with the highest match score of it. | 1 -> A fasta file (default:407228412.fasta), 2 -> A fasta file (default:407228326.fasta)|
-| Groupwork_oaks_debugme.py    | This script filters species names in a CSV file, identifying those belonging to the Quercus genus (oak trees), and writes them to a new CSV file. | None |
-=======
+HEAD
 | align_seqs_fasta.py    | Aligns two DNA sequences provided as separate FASTA files. It can take explicit file names as input or, if no arguments are provided, automatically picks two dafaut FASTA files from the data/ folder (e.g., `407228412.fasta` and `407228326.fasta`). The script outputs the best alignment and its score in `../results/best_alignment_fasta.txt`. | 1 -> A fasta file (default:`407228412.fasta`), 2 -> A fasta file (default:`407228326.fasta`)|
 | align_seqs_better.py   | Calculate the match score between two seqs. Print and save all the possible alignment with the highest match score of it. | 1 -> A fasta file (default:`407228412.fasta`), 2 -> A fasta file (default:4`07228326.fasta`)|
 | Groupwork_oaks_debugme.py    | This script filters species names in a `.csv` file, identifying those belonging to the Quercus genus (oak trees), and writes them to a new `.csv` file. | None |
@@ -73,7 +69,6 @@ python3 align_seqs_better.py
 # Filter oak species
 python3 Groupwork_oaks_debugme.py
 ```
->>>>>>> a74623723e274129066f61173a861c7fbb05519c
 
 
 ## **Author and Contact**
