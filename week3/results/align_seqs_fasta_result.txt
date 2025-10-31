@@ -1,6 +1,6 @@
 # align_seqs_fasta.py result
-Input 1: ../data/407228326.fasta
-Input 2: ../data/407228412.fasta
+Input 1: /home/rh925/Documents/CMEEGroupWork/week3/data/407228326.fasta
+Input 2: /home/rh925/Documents/CMEEGroupWork/week3/data/407228412.fasta
 
 Best score: 545
 Start on longer (0-based): 76
