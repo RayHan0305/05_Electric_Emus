@@ -55,22 +55,23 @@
 **Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
 
 ### [Ruixuan Han]
-**Role(s)**: [e.g., Integration specialist, Error handling, Code optimization]
+**Role(s)**: [Code optimization, Documentation lead]
 
 **Specific Contributions**:
-- [Describe specific code/functions written]
-- [Describe documentation contributions]
-- [Describe testing/debugging work]
-- [Describe other contributions]
+- [Writing the align_seqs_better.py practical.]
+- [Writing the README.md.]
+- [Help with the improvement of alignments DNA practicals.]
 
 **Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
-
+- ["Groupwork updated" in Oct 26: Finished writing the align_seqs_better.py and push it into the repo]
+- ["Groupwork updated" in Oct 28: Modification of align_seqs_fasta.py and align_seqs_better.py.]
+- []
 
 ---
 
 ## Collaboration Process
 
-**Meeting Schedule**: [There is no specific schedule, we communicate at any time online when there is a problem.]
+**Meeting Schedule**: [There is no specific meeting schedule, we communicate at any time online when there is a problem.]
 
 **Work Distribution Strategy**: [Complete all the tasks separately, then compare and discuss the results, and finally optimize the code.]
 
@@ -96,8 +97,8 @@
 We declare that the above contributions are accurate and that all team members participated actively in this group work.
 
 **Signatures** (or typed names with date):
-- [Team Member 1]: _______________  Date: _______
-- [Team Member 2]: _______________  Date: _______
-- [Team Member 3]: _______________  Date: _______
-- [Team Member 4]: _______________  Date: _______
-- [Team Member 5]: _______________  Date: _______
+- [Team Member 1]: Paruit Lisa          Date: _______
+- [Team Member 2]: Zhiquan Kang         Date: _______
+- [Team Member 3]: Lawson-Hale Tasha L  Date: _______
+- [Team Member 4]: Ximan Ding           Date: _______
+- [Team Member 5]: Ruixuan Han          Date: _______
