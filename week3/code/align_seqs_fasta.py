@@ -1,70 +1,111 @@
+#!/usr/bin/env python3
+
 """
-Usage:
-    python3 align_seqs_fasta.py ../data/<filename> ../data/<filename>
-    
-Description: 
-    This script calculate the match score between two seqs from to seqerate fasta files. 
-    Print and save the best score and the last best alignment of it
+align_seqs_fasta.py
+This script will align any two DNA sequences from FASTA files in data/.
 
-Author: 'Ximan Ding'
-Version: 0.0.1
-License: License for this code/program
+Usage: 
+    This script will take any two fasta sequences (in seperate file in data folder) to be aligned as input.
 
-__appname__ = 'align_seqs_fasta'
-__author__ = 'XimanDing'
+    Method 1(default):
+    No parameters (It will try to use ../data/seq1.fasta and seq2.fasta by default, and if they’re not there, it will automatically pick the first two FASTA files it finds in the ../data/ directory.)
+
+    python3 align_seqs_faster.py
+
+    Method 2:
+    Explicitly specify two fasta files as input.
+    python3 align_seqs_fasta.py seq1.fasta seq2.fasta
+    (for example: python3 align_seqs_fasta.py ../data/407228326.fasta ../data/407228412.fasta)
+    There are three fasta files in data/ now which are 407228326.fasta; 407228412.fasta; E.coli.fasta
+"""
+
+__appname__ = 'align_seqs_faster'
+__author__ = 'Ximan Ding'
 __version__ = '0.0.1'
+__license__ = "License for this code/program"
 
-"""
-
+from pathlib import Path
 import sys
+from typing import Tuple, List
+import argparse
 
-# Read a FASTA file and return the sequence as a string
-def read_fasta(filename):
-    with open(filename, 'r') as f:
-        lines = f.readlines()
-        seq = "".join([line.strip() for line in lines if not line.startswith(">")])
-    return seq
+def read_fasta(p: Path) -> str:
+    """Read a (single-sequence) FASTA and return uppercase sequence."""
+    return "".join(
+        line.strip() for line in p.read_text().splitlines()
+        if line and not line.startswith(">")
+    ).upper()
 
-# Calculate alignment score
-def calculate_score(s1, s2, l1, l2, startpoint):
+def score_at_start(longer: str, shorter: str, start: int) -> int:
+    L1, L2 = len(longer), len(shorter)
     score = 0
-    for i in range(l2):
-        if (i + startpoint) < l1:
-            if s1[i + startpoint] == s2[i]:
-                score += 1
+    for i in range(L2):
+        j = start + i
+        if j >= L1: break
+        if longer[j] == shorter[i]:
+            score += 1
     return score
 
+def match_line(longer: str, shorter: str, start: int) -> str:
+    L1, L2 = len(longer), len(shorter)
+    marks = []
+    for i in range(L2):
+        j = start + i
+        if j >= L1: break
+        marks.append("*" if longer[j] == shorter[i] else "-")
+    return "." * start + "".join(marks)
+
+def best_alignment(a: str, b: str):
+    """Return (longer, padded_shorter, match_visual, best_score, best_start)."""
+    longer, shorter = (a, b) if len(a) >= len(b) else (b, a)
+    best_score, best_start = -1, 0
+    for start in range(len(longer)):
+        sc = score_at_start(longer, shorter, start)
+        if sc > best_score:
+            best_score, best_start = sc, start
+    padded_shorter = "." * best_start + shorter
+    return longer, padded_shorter, match_line(longer, shorter, best_start), best_score, best_start
+
+def auto_two_fastas(data_dir: Path):
+    files = sorted(list(data_dir.glob("*.fa")) + list(data_dir.glob("*.fasta")) + list(data_dir.glob("*.fna")))
+    if len(files) < 2:
+        raise SystemExit(f"[ERROR] Need at least 2 FASTA in {data_dir}")
+    return files[0], files[1]
+
+def save_result(out_path: Path, f1: Path, f2: Path, longer: str, padded: str, vis: str, score: int, start: int):
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        "# align_seqs_fasta.py result\n"
+        f"Input 1: {f1}\nInput 2: {f2}\n\n"
+        f"Best score: {score}\nStart on longer (0-based): {start}\n\n"
+        f"{longer}\n{padded}\n{vis}\n"
+    )
+
 def main(argv):
-    if len(argv) != 3:
-        sys.exit(0)
+    proj = Path(__file__).resolve().parent.parent
+    data_dir = proj / "data"
+    out_file = proj / "results" / "align_seqs_fasta_result.txt"
 
-    seq1_file = argv[1]
-    seq2_file = argv[2]
-
-    #  Read FASTA sequences
-    seq1 = read_fasta(seq1_file)
-    seq2 = read_fasta(seq2_file)
-
-    l1, l2 = len(seq1), len(seq2)
-    if l1 >= l2:
-        s1, s2 = seq1, seq2
+    if len(argv) == 3:
+        f1, f2 = Path(argv[1]), Path(argv[2])
+    elif len(argv) == 1:
+        f1, f2 = auto_two_fastas(data_dir)
+        print(f"[INFO] Using defaults from {data_dir}: {f1.name}, {f2.name}")
     else:
-        s1, s2 = seq2, seq1
-        l1, l2 = l2, l1
+        print("Usage: python3 align_seqs_fasta.py <seq1.fasta> <seq2.fasta>")
+        return 1
 
-    # Alignment comparision
-    my_best_align = None
-    my_best_score = -1
+    s1, s2 = read_fasta(f1), read_fasta(f2)
+    longer, padded, vis, score, start = best_alignment(s1, s2)
 
-    for i in range(l1):
-        z = calculate_score(s1, s2, l1, l2, i)
-        if z > my_best_score:
-            my_best_align = "." * i + s2
-            my_best_score = z
+    print("\n=== Best alignment ===")
+    print(f"Score: {score}    Start(on longer): {start}\n")
+    print(longer)
+    print(padded)
+    print(vis)
 
-    print("The best align:", my_best_align)
-    print("The best score:", my_best_score)
-
+    save_result(out_file, f1, f2, longer, padded, vis, score, start)
+    print(f"\n[OK] Result saved to: {out_file}")
     return 0
 
 if __name__ == "__main__":
