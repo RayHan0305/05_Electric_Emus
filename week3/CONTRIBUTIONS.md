@@ -7,46 +7,52 @@
 ## Individual Contributions
 
 ### [Paruit Lisa]
-**Role(s)**: [e.g., Lead developer, Data analysis specialist, Testing coordinator]
+**Role(s)**: [Lead developer, Testing coordinator]
 
 **Specific Contributions**:
-- [Describe specific code/functions written]
-- [Describe documentation contributions]
-- [Describe testing/debugging work]
-- [Describe other contributions]
+- Assisted in debugging and verifying the correctness of all Python scripts.
+- Designed and executed test cases for `align_seqs_fasta.py` and `align_seqs_better.py` using multiple FASTA inputs.
 
-**Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
+- Helped validate output consistency in the results/ directory.
 
+- Contributed to docstring and inline comment improvements.
+
+**Key commits**:  
+- Lisa's version of align-seqs-fasta
+- Updated docstrings and improved readability.
 ---
 
 ### [Zhiquan Kang]
-**Role(s)**: [e.g., Code reviewer, Visualization specialist, Documentation lead]
+**Role(s)**: [Code reviewer, Testing coordinator]
 
 **Specific Contributions**:
-- [Describe specific code/functions written]
-- [Describe documentation contributions]
-- [Describe testing/debugging work]
-- [Describe other contributions]
+- Managed Git operations and coordinated branch merges between group members.
+- Reviewed code structure, naming consistency, and documentation format.
+- Supported setup and organization of the repository directories.
 
-**Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
+**Key commits**:   
+- Reviewed and merged alignment updates.
+- update groupwork
 
 ---
 
 ### [Lawson-Hale Tasha L]
-**Role(s)**: [e.g., Integration specialist, Error handling, Code optimization]
+**Role(s)**: [Integration specialist, Code optimization]
 
 **Specific Contributions**:
-- [Describe specific code/functions written]
-- [Describe documentation contributions]
-- [Describe testing/debugging work]
-- [Describe other contributions]
+- Integrated separate scripts into a consistent file structure.
+- Enhanced error handling and file path robustness for all main scripts.
+- Assisted in simplifying argument parsing in sequence alignment scripts.
 
-**Key commits**: [List 3-5 most significant commit hashes and brief descriptions]
+**Key commits**:  
+- inserted previous file oaksdebugme.py ready for improvement
+- Oct29th align_sequs_fasta: Finished- added doc strings and tested.
+- Oct30th added data for oaks file and changed output to results file.
 
 ---
 
 ### [Ximan Ding]
-**Role(s)**: [Integration specialist, Error handling, Code optimization]
+**Role(s)**: [Integration specialist, Code optimization]
 
 **Specific Contributions**:
 - Write the `align_seqs_fasta.py` scripts (DNA2 practical)
@@ -54,7 +60,7 @@
 - Conducted multiple test runs with different FASTA files inputs to verify alignments accuracy.
 - Designed a clear output format for alignment result and ensured consistent file structure.
 
-**Key commits**: 
+**Key commits**:  
 Create and implemented core logic for DNA1 practical. Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. Coordinated testing and documentation sonsistency across week3 scripts.
 
 ---
@@ -68,7 +74,7 @@ Create and implemented core logic for DNA1 practical. Revise and optimized the R
 - Supported improvements and optimization in the DNA alignment practicals (`align_seqs_fasta/py`,`align_seqs_better.py`).
 - Coordinated documentation formatting and consistency checks across the repo.
 
-**Key commits**: 
+**Key commits**:  
 - "Groupwork updated" in Oct 26: Finished writing the `align_seqs_better.py` and push it into the repo
 - "Groupwork updated" in Oct 28: Modified both `align_seqs_fasta.py` and `align_seqs_better.py` for optimization.
 ---
