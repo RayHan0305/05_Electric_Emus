@@ -41,12 +41,13 @@
 
 **Specific Contributions**:
 - Integrated separate scripts into a consistent file structure.
+- Co-authored `align_seqs_better.py`
 - Enhanced error handling and file path robustness for all main scripts.
 - Assisted in simplifying argument parsing in sequence alignment scripts.
 
 **Key commits**:  
-- inserted previous file oaksdebugme.py ready for improvement
-- Oct29th align_sequs_fasta: Finished- added doc strings and tested.
+- inserted previous file `oaksdebugme.py` ready for improvement
+- Oct29th `align_sequs_fasta`: Finished- added doc strings and tested.
 - Oct30th added data for oaks file and changed output to results file.
 
 ---
