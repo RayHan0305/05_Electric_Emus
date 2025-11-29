@@ -43,9 +43,32 @@ n_permutations <- 10000
 ls()
 class(x)
 #Create lagged variables for correlation
-X <- x - [length(x)]
+X <- x[-length(x)]
 X_x <- x[-1]
 
 #observed_coefficient
 obs_coef <- cor(X, X_x, use = "everything", method = c("pearson"))
 cat(obs_coef)
+# resulting observed correlation coefficient= 0.3261697
+
+#permutation function
+calc_permuted <- function(X, X_x n_permutations) {
+  permuted <- sapply(1:n_permutations, function(i) {
+    
+    # shuffle using sample
+    # The lagged year temperatures are shuffled to break year on year dependency
+    X_x_shuffled <- sample(X_x)
+    
+    # Calculate the Pearson correlation for the new random pairing
+    return(cor(X, X_x_shuffled, use = "everything", method = ("pearson")))
+  })
+  return(permuted)
+  }
+
+#calling calc_permuted func and checking results
+permuted_coef <- calc_permuted(X, X_x, n_permutations = 10000)
+print(head(permuted_coef))
+print(tail(permuted_coef))
+summary(permuted_coef)
+sd(permuted_coef)
+
