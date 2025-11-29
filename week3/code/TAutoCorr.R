@@ -17,6 +17,8 @@
 # AUTHOR: Natasha Lawson-Hale
 # DATE: 29rd November 2025
 ############################################################
+#Import
+library(ggplot2)
 # Clear environment and load data frame
 rm(list = ls())
 Florida_data <- load("../data/KeyWestAnnualMeanTemperature.RData")
@@ -52,7 +54,7 @@ cat(obs_coef)
 # resulting observed correlation coefficient= 0.3261697
 
 #permutation function
-calc_permuted <- function(X, X_x n_permutations) {
+calc_permuted <- function(X, X_x, n_permutations) {
   permuted <- sapply(1:n_permutations, function(i) {
     
     # shuffle using sample
@@ -62,7 +64,7 @@ calc_permuted <- function(X, X_x n_permutations) {
     # Calculate the Pearson correlation for the new random pairing
     return(cor(X, X_x_shuffled, use = "everything", method = ("pearson")))
   })
-  return(permuted)
+return(permuted)
   }
 
 #calling calc_permuted func and checking results
@@ -72,3 +74,16 @@ print(tail(permuted_coef))
 summary(permuted_coef)
 sd(permuted_coef)
 
+#calculating the pvalue
+p_val <- sum(abs(permuted_coef) >= abs(obs_coef)) / (1 + n_permutations)
+
+#calculating the z-score
+z_score <- (obs_coef-mean(permuted_coef))/sd(permuted_coef)
+
+#save the results to a data frame and .csv
+results_perm <- data.frame(parameter = c("obs_coef", "n_permutations", "P_val", "Z-score"),
+value = c(obs_coef, n_permutations, p_val, z_score)
+)
+print(results_perm)
+
+write.csv(results_perm, file = "../results/perm_coef_data.csv", row.names = FALSE)
