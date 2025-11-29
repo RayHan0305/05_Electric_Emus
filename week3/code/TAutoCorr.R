@@ -22,13 +22,30 @@ rm(list = ls())
 Florida_data <- load("../data/KeyWestAnnualMeanTemperature.RData")
 #explore data frame
 ls()
-nrows(ats)
+nrow(ats)
 class(ats)
 head(ats)
 summary(ats)
 tail(ats)
 plot(ats)
+
 ls()
 library(ggplot2)
+#check for normal distribution
+hist(x)
+qqnorm(x)
+qqline(x, col = "red") # line for easy comparison
 
+# Define variables and the number of permutations
+y <- ats$Year
+x <- ats$Temp
+n_permutations <- 10000
+ls()
+class(x)
+#Create lagged variables for correlation
+X <- x - [length(x)]
+X_x <- x[-1]
 
+#observed_coefficient
+obs_coef <- cor(X, X_x, use = "everything", method = c("pearson"))
+cat(obs_coef)
