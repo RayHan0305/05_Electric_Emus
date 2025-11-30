@@ -44,13 +44,13 @@
 - Co-authored `align_seqs_better.py`
 - Enhanced error handling and file path robustness for all main scripts.
 - Assisted in simplifying argument parsing in sequence alignment scripts.
+- Authored `TAutoCorr.R` code.
 
 **Key commits**:  
 - inserted previous file `oaksdebugme.py` ready for improvement
 - Oct29th `align_sequs_fasta`: Finished- added doc strings and tested.
 - Oct30th added data for oaks file and changed output to results file.
-
----
+- Fixed syntax error in permutation. Ran permuted correlation coefficient. Calculated the p and z values. saved to csv ready for .tex.
 
 ### [Ximan Ding]
 **Role(s)**: [Integration specialist, Code optimization]
@@ -62,7 +62,7 @@
 - Designed a clear output format for alignment result and ensured consistent file structure.
 
 **Key commits**:  
-Create and implemented core logic for DNA1 practical. Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. Coordinated testing and documentation sonsistency across week3 scripts.
+Create and implemented core logic for DNA1 practical. Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. Coordinated testing and documentation consistency across week3 scripts.
 
 ---
 
