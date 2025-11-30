@@ -118,6 +118,6 @@ We declare that the above contributions are accurate and that all team members p
 **Signatures** (or typed names with date):
 - [Team Member 1]: Paruit Lisa - Date: _______
 - [Team Member 2]: Zhiquan Kang - Date: _______
-- [Team Member 3]: Lawson-Hale Tasha L - Date: _______
+- [Team Member 3]: Lawson-Hale Tasha L - Date: 30/11/2025
 - [Team Member 4]: Ximan Ding - Date: _______
 - [Team Member 5]: Ruixuan Han - Date: _______
