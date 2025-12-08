@@ -1,0 +1,7 @@
+Lag-1 autocorrelation in annual mean temperature
+
+Observed r = 0.3262
+One-sided p = 0.00000
+Two-sided p = 0.00110
+N permutations = 10000
+
