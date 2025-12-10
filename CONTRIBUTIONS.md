@@ -56,12 +56,16 @@
 
 **Specific Contributions**:
 - Write the `align_seqs_fasta.py` scripts (DNA2 practical)
-- Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks.
-- Conducted multiple test runs with different FASTA files inputs to verify alignments accuracy.
+- Reorganized and refined the overall repository structure to ensure clear separation between Week 3 and Week 4 tasks.
+- Updated and improved the main README file to accurately reflect the revised project structure, task descriptions, and usage instructions.
+- Modified and refined script details to improve robustness, clarity, and consistency of file paths and outputs.
 - Designed a clear output format for alignment result and ensured consistent file structure.
 
 **Key commits**:  
-Create and implemented core logic for DNA1 practical. Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. Coordinated testing and documentation sonsistency across week3 scripts.
+- Create and implemented core logic for DNA1 practical. 
+- Repository structure reorganization for Week 3 and Week 4.
+- Revise and optimized the READ.md file, improving clarity, formatting and adding usage examples with proper code blocks. 
+- Major updates to README.md to improve clarity and submission standard compliance.
 
 ---
 
@@ -119,5 +123,5 @@ We declare that the above contributions are accurate and that all team members p
 - [Team Member 1]: Paruit Lisa - Date: _______
 - [Team Member 2]: Zhiquan Kang - Date: _______
 - [Team Member 3]: Lawson-Hale Tasha L - Date: 30/11/2025
-- [Team Member 4]: Ximan Ding - Date: _______
+- [Team Member 4]: Ximan Ding - Date: 10/12/2025
 - [Team Member 5]: Ruixuan Han - Date: _______
