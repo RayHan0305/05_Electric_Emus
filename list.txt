@@ -1,10 +1,40 @@
 .
-├── list.txt
+05_Electric_Emus/
+│
+├── Feedback/
+│
+├── week3/
+│   ├── code/
+│   │   ├── align_seqs_better.py
+│   │   ├── align_seqs_fasta.py
+│   │   └── oaks_debugme.py
+│   │
+│   ├── data/
+│   │   ├── 407228326.fasta
+│   │   ├── 407228412.fasta
+│   │   ├── E.coli.fasta
+│   │   └── TestOaksData.csv
+│   │
+│   ├── results/
+│   ├── .gitignore
+│   └── README.md
+│
+├── week4/
+│   ├── code/
+│   │   ├── PP_Regress_loc.R
+│   │   └── TAutoCorr.R
+│   │
+│   ├── data/
+│   │   ├── EcolArchives-E089-51-D1.csv
+│   │   └── KeyWestAnnualMeanTemperature.RData
+│   │
+│   ├── results/
+│   ├── .gitignore
+│   └── group_assessment2.pdf
+│
+├── .gitignore
+├── CONTRIBUTIONS.md
 ├── README.md
-└── week3
-    ├── code
-    ├── data
-    ├── results
-    └── sandbox
+└── list.txt
 
-6 directories, 2 files
+10 directories, 19 files

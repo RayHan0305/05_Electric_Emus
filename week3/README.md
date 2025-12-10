@@ -26,17 +26,29 @@ Python
 ```
 ## **Installation**
 ```
+Ensure that you are using a UNIX-based environment.
+
 git clone git@github.com:RayHan0305/05_Electric_Emus.git
 ```
 
 ## **Project structure and Usage**
 ```plaintext
-05_Electric_Emus/
+./week3/
 │
-├── week3/
-│   ├── code/
-│   ├── data/
-│   └── results/
+├── code/
+│   ├── align_seqs_fasta.py
+│   ├── align_seqs_better.py
+│   └── Groupwork_oaks_debugme.py
+│
+├── data/
+│   ├── 407228326.fasta
+│   ├── 407228412.fasta
+│   ├── E.coli.fasta
+│   └── TestOaksData.csv
+│
+├── results/
+│   └── (currently empty — ignored by .gitignore)
+│
 └── README.md
 ```
 Run scripts from the `code` directory, and all results are automatically saved in the `../results/` folder
@@ -53,7 +65,7 @@ It contains directories called `code`, `data`, `results`
 HEAD
 | align_seqs_fasta.py    | Aligns two DNA sequences provided as separate FASTA files. It can take explicit file names as input or, if no arguments are provided, automatically picks two dafaut FASTA files from the data/ folder (e.g., `407228412.fasta` and `407228326.fasta`). The script outputs the best alignment and its score in `../results/best_alignment_fasta.txt`. | 1 -> A fasta file (default:`407228412.fasta`), 2 -> A fasta file (default:`407228326.fasta`)|
 | align_seqs_better.py   | Calculate the match score between two seqs. Print and save all the possible alignment with the highest match score of it. | 1 -> A fasta file (default:`407228412.fasta`), 2 -> A fasta file (default:4`07228326.fasta`)|
-| Groupwork_oaks_debugme.py    | This script filters species names in a `.csv` file, identifying those belonging to the Quercus genus (oak trees), and writes them to a new `.csv` file. | None |
+| oaks_debugme.py    | This script filters species names in a `.csv` file, identifying those belonging to the Quercus genus (oak trees), and writes them to a new `.csv` file. | None |
 
 ## Example Commands
 ```
