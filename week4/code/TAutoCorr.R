@@ -1,5 +1,12 @@
 #!/usr/bin/env Rscript
-# TAutoCorr.R
+
+# Language: R
+# Script: TAutoCorr.R
+# Des: Test lag-1 autocorrelation in annual mean temperature (Key West, Florida) using a permutation test
+# Usage: Rscript TAutoCorr (in terminal) or source("TAutoCorr.R") (in R console)
+# Date: Oct, 2025
+# Author: Ruixuan Han, Lawson-Hale Tasha L
+
 # Permutation test for lag-1 autocorrelation in annual mean temperature
 # Question: Are temperatures in one year correlated with the next year?
 
